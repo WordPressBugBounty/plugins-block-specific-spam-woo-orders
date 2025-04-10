@@ -5,12 +5,12 @@
 * Plugin URI:
 * Description: A quick plugin to block on-going issues with spam WooCommerce orders November 2020
 * Author: guwii
-* Version: 0.77
+* Version: 0.78
 * Author URI: https://guwii.com
 * License: GPL3+
 * Text Domain: guwii-woo-block-spam-orders
 * WC requires at least: 4.3
-* WC tested up to: 9.2.3
+* WC tested up to: 9.8.1
 */
 
 // Only use this plugin if WooCommerce is active

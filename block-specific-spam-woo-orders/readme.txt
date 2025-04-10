@@ -2,9 +2,9 @@
 Contributors: wigster
 Tags: woocommerce, woo, block, spam, orders
 Requires at least: 5.1
-Tested up to: 6.6.1
+Tested up to: 6.8
 Requires PHP: 5.4
-Stable tag: 0.77
+Stable tag: 0.78
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -84,6 +84,10 @@ Please note that these filters are only available starting from version 0.77 of 
 Yes, where possible, I will try my best to add additional checks if the attack vectors change.
 
 == Changelog ==
+
+= 0.78 =
+* Tested compatibility with WooCommerce 9.8.1
+* Tested compatibility with WP 6.8
 
 = 0.77 =
 * Added filters for extending blocked email domains and names.
