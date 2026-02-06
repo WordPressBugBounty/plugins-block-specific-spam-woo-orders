@@ -2,9 +2,9 @@
 Contributors: wigster
 Tags: woocommerce, woo, block, spam, orders
 Requires at least: 5.1
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 5.4
-Stable tag: 0.78
+Stable tag: 0.79
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -84,6 +84,10 @@ Please note that these filters are only available starting from version 0.77 of 
 Yes, where possible, I will try my best to add additional checks if the attack vectors change.
 
 == Changelog ==
+
+= 0.79 =
+* Tested compatibility with WordPress 6.9
+* Minor change to enforce case insenstiive comparison of names.
 
 = 0.78 =
 * Tested compatibility with WooCommerce 9.8.1

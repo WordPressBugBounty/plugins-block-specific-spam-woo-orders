@@ -2,19 +2,24 @@
 
 /*
 * Plugin Name: Block Specific Spam Woo Orders
-* Plugin URI:
+* Plugin URI: https://wordpress.org/plugins/block-specific-spam-woo-orders/
 * Description: A quick plugin to block on-going issues with spam WooCommerce orders November 2020
 * Author: guwii
-* Version: 0.78
+* Version: 0.79
 * Author URI: https://guwii.com
 * License: GPL3+
 * Text Domain: guwii-woo-block-spam-orders
 * WC requires at least: 4.3
-* WC tested up to: 9.8.1
+* WC tested up to: 10.3
 */
-
+if (! defined('ABSPATH')) {
+  exit; // Exit if accessed directly
+}
 // Only use this plugin if WooCommerce is active
-if (in_array('woocommerce/woocommerce.php', get_option('active_plugins'))) {
+if (
+  in_array('woocommerce/woocommerce.php', (array) get_option('active_plugins', []), true)
+  || in_array('woocommerce/woocommerce.php', (array) get_site_option('active_sitewide_plugins', []), true)
+) {
 
   // Add our custom checks to the built-in WooCommerce checkout validation:
   add_action('woocommerce_after_checkout_validation', 'action_woocommerce_validate_spam_checkout', 10, 2);
@@ -58,8 +63,10 @@ if (in_array('woocommerce/woocommerce.php', get_option('active_plugins'))) {
 
     // If not spam by email domain, check the names
     if (!$is_a_spam_order) {
+      $billing_first_name_lower = strtolower($billing_first_name);
+
       foreach ($blocked_names as $blocked_name) {
-        if (strpos($billing_first_name, $blocked_name) !== false) {
+        if (strpos($billing_first_name_lower, strtolower($blocked_name)) !== false) {
           $is_a_spam_order = true;
           break;
         }
