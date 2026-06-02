@@ -2,11 +2,11 @@
 Contributors: wigster
 Tags: woocommerce, woo, block, spam, orders
 Requires at least: 5.1
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 5.4
-Stable tag: 0.79
+Stable tag: 0.80
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 A simple plugin to automatically block spam Woo orders that began in October 2020.
 
@@ -35,7 +35,7 @@ To use these filters, add code to your theme's `functions.php` file or a custom 
 
 #### 1. Blocking Additional Email Domains
 
-If you want to block additional email domains like `exampledomain.com` and `spamdomain.net`, use the `BSSO_extra_domains` filter.
+If you want to block additional email domains like `exampledomain.com` and `spamdomain.net`, use the `BSSO_extra_domains` filter. Domains can be supplied with or without a leading `@`.
 
 **Code Example:**
 
@@ -73,10 +73,6 @@ add_filter('BSSO_extra_names', function () {
 });
 </code></pre>
 
-### Version Compatibility
-
-Please note that these filters are only available starting from version 0.77 of the plugin. Ensure your plugin is updated to at least this version to use the custom filters.
-
 == Frequently Asked Questions ==
 
 = Will you keep this plugin updated? =
@@ -85,9 +81,17 @@ Yes, where possible, I will try my best to add additional checks if the attack v
 
 == Changelog ==
 
+= 0.80 =
+* Tested compatibility with WordPress 7.0.
+* Tested compatibility with WooCommerce 10.8.1.
+* Fixed WooCommerce active detection for network-activated WooCommerce on multisite.
+* Declared WooCommerce as a plugin dependency for WordPress versions that support plugin dependencies.
+* Improved email domain matching to compare against the billing email domain instead of arbitrary substrings.
+* Hardened custom filter handling for invalid domain/name values.
+
 = 0.79 =
 * Tested compatibility with WordPress 6.9
-* Minor change to enforce case insenstiive comparison of names.
+* Minor change to enforce case insensitive comparison of names.
 
 = 0.78 =
 * Tested compatibility with WooCommerce 9.8.1
